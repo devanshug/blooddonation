@@ -1,0 +1,26 @@
+{% extends "basic.html" %}
+{% block content %}
+	<div class="list">
+		<h1>Famous Quotes About Blood Donation</h1>
+		<ul class="quotes">
+			{% for quote in quotes %}
+				<div class="post">
+					<div class="post-container">
+					<li class="message"><div id="message-body">{{quote.quote.splitlines | join:"<br/>"}}</div>
+					<ul class="message_section" id="{{quote.quote_id}}">
+						{% if quote.link == '' %}
+							<li class="author">{{quote.author}}</li>
+						{% else %}
+							<li class="author"><a href="{{quote.link}}">{{quote.author}}</a></li>
+						{% endif%}
+						{% if quote.reference != '' %}
+							<li class="book">{{quote.reference}}</li>
+						{% endif %}
+					</ul>
+					</li>
+					</div>
+				</div>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

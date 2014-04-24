@@ -1,0 +1,10 @@
+Blood group systems content		http://en.wikipedia.org/wiki/Blood_type#Blood_group_systems
+Qualifications content			http://www.unitedbloodservices.org/pdf/bs300l-ubs.pdf
+Famous Quotes content			http://www.quotegarden.com/blood-organ-donation.html
+Calculate Chart content			http://www.blood.co.uk/pdf/Female_donors_EBV_Chart.pdf
+SLOGANS ON BLOOD DONATION content	https://www.facebook.com/bdregister/posts/463923483642459?stream_ref=10
+Email Validation Regex			http://stackoverflow.com/questions/2507030/email-validation-using-jquery
+Background image bg.gif			http://csstemplatesmarket.com/freecsstemplates/acallia/images/bg.gif
+Banner middle middle_banner_bg.gif	http://csstemplatesmarket.com/freecsstemplates/acallia/images/middle_banner_bg.gif
+CSS Table Design			http://www.csstablegenerator.com/
+Banner Middle blooddonation_banner.png	http://www.nchmd.org/images/cbc/cbc_banner.jpg

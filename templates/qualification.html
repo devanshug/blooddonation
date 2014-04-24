@@ -1,0 +1,42 @@
+{% extends "basic.html" %}
+{% block content %}
+<h1>Basic Qualifications</h1>
+<p>Some of the conditions are : </p>
+<strong>Age : </strong>
+16 or older for whole blood or apheresis donations (parental permission is required for all 16-year-old donors and, in some states, for 17-year-old donors.)
+<br/>
+<strong>Weight : </strong>
+At least 110 pounds (50 kg)
+There are some weight and height restrictions for <strong>donors younger than 23.</strong>
+<br/>
+<strong>Waiting period between donations: </strong>
+<div class="list">
+<ul class="waiting_periods">
+<li id="1">Whole blood or red cell/plasma donations: 56 days (up to 6x/12
+months)</li>
+<li id="2">Plasma donations: 28 days</li>
+<li id="3">Double red cell donations: 112 days (up to 3x/12 months)</li>
+<li id="4">Platelet donations: 7 days (up to 24x/12 months)</li>
+</ul>
+</div>
+<div class="list">
+<h1>When you are not allowed to donate</h1>
+<p>Some of the conditions are : </p>
+<ul class="no_donation">{% for rule in no_donation %}
+<li id="{{rule.notdonate_id}}">{{rule.notdonate}}</li>
+{% endfor %}</ul>
+</div>
+<h2>Medications</h2>
+If you take medication, you probably are eligible to donate. Here is a list of medications that may keep you from donating for a period of time.
+<div class="tabledlist">
+	<table class="table">
+		{% for medication in medications %}
+			<tr id="{{medication_id}}">
+				<td>{{medication.medication_id}}</td>
+				<td>{{medication.medication}}</td>
+				<td>{{medication.waiting_time}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock %}

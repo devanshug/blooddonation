@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{% block title %}Basic Template{% endblock %}</title>
+		<script type="text/javascript" src="{% static "assets/js/jquery-1.11.0.min.js" %}"></script>
+		<link rel="stylesheet" type="text.css" href="{% static "assets/css/style.css" %}"/>
+	</head>
+	<body>
+		<div id="main-container">
+			<nav id="topnav" class="topnav">
+				<img src="{% static "assets/images/blooddonation_logo_banner.png" %}"/>
+				{% block nav %}					
+				<ul id="topnavul" class="topnav">
+					{% if authenticated %}
+						<li><a href="/wall">Home</a></li>
+					{% else %}
+						<li><a href="/">Home</a></li>
+					{% endif %}
+					<li>
+						<a href="javascript:void(0)">Know More</a>
+						<ul class="subnav">
+							<li><a href="/facts">Facts</a></li>
+							<li><a href="/qualification">Qualification</a></li>
+							<li><a href="/famousquotes">Famous Quote</a></li>
+							<li><a href="/calculate">Calculate</a></li>
+							<li><a href="/bloodgroupsystem">Blood Group Systems</a></li>
+						</ul>
+					</li>
+					{% if authenticated %}
+						<li><a href="/urgent">Urgent Requirement</a></li>
+						<li><a href="/logout">Logout</a></li>
+					{% else %}
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Register</a></li>
+					{% endif %}
+				</ul>
+				{% endblock %}
+			</nav>
+			<div class="clear"></div>
+			<div id="banner">
+				{% block banner %}
+				{% endblock %}
+			</div>
+			<div id="content-area">
+				<div id="content">
+					<div id="content-main">
+						{% block content %}
+						{% endblock %}
+					</div>
+				</div>
+				<div id="rightarea">
+					<div id="rightarea-content">
+						{% block rightarea %}
+							<table id="register_table">
+								<th id="heading" class="table_title">Registered Donors</th>
+								{% for bloodgroup in bloodgroupsCount %}
+									<tr><td>{{bloodgroup.name}}</td><td>{{bloodgroup.count}}</tr>
+								{% endfor %}
+							</table>
+						{% endblock %}
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div id="footer">
+				{% block footer %}
+					<div id="footer-container">
+						<div id="text">© Copyrights Reserved by BloodDonation.com</div>
+					</div>
+				{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>

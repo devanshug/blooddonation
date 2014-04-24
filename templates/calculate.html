@@ -1,0 +1,42 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block content %}
+	<script type="text/javascript" src="{% static "assets/js/femaledata.js" %}"></script>
+	<div class="container">
+	<div id="fillformtitle">
+		Can you Donate?
+	</div>
+	<form id="fillform" class="group">
+		<div class="inputelement">
+			<div class="inputtext">Height : </div>
+			<div class="inputcomponent">
+				<select name="height" id="height" class="comboboxcomponent">
+					<script type="text/javascript">
+						for(i=149;i<169;i++)
+							document.write("<option value='"+i+"'>"+data[i]['displayData']+"</option>")
+					</script>
+				</select>
+			</div>
+		</div>
+		<div class="inputelement">
+			<div class="inputtext">Weight : </div>
+			<div class="inputcomponent">
+				<select name="weight" id="weight" class="comboboxcomponent">
+					<option value="50">50 or less</option>
+					<script type="text/javascript">
+						for(i=51;i<=63;i++)
+							document.write("<option value='"+i+"'>"+i+"</option>")
+					</script>
+					<option value="64">64 or higher</option>
+				</select>
+			</div>
+		</div>
+		<div id="submitbutton">
+		<input type="button" name="submit" id="submit" class="buttoncomponent" value="Calculate"/>
+	</div>
+	<br/>
+	<div id="output"></div>
+	</form>
+	<script type="text/javascript" src="{% static "assets/js/calculate.js" %}"></script>
+	</div>
+{% endblock %}

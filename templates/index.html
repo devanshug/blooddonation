@@ -1,0 +1,24 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block banner %}
+<div id="middle_banner">
+<img src="{% static "assets/images/blooddonation_banner.png" %}" width="965" height="280" alt="" id="banner-pic"/>
+</div>
+{% endblock %}
+{% block content %}
+	<h1>Urgent Requirements for blood</h1>
+	<ul class="quotes">
+		{% for requirement in requirements %}
+			<div class="post">
+				<div class="post-container">
+				<li class="message"><div id="message-body">{{requirement.message}}</div>
+					<ul class="message_section">
+						<li class="author">help for {{requirement.name}}, {{requirement.bloodgroup}}</li>
+						<li class="author">asked by {{requirement.username}} from {{requirement.city}}, {{requirement.state}} ({{requirement.mobile}})</li>
+					</ul>
+				</li>
+				</div>
+			</div>
+		{% endfor %}
+	</ul>
+{% endblock %}

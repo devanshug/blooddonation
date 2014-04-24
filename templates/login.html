@@ -1,0 +1,27 @@
+{% extends "basic.html" %}
+{% load static %}
+
+{% block content %}
+	<div id="loginSection">
+		<div class="container">
+		<div id="fillformtitle">
+			Login Form
+		</div>
+		{% if invalid %}
+			<p class = "error">Sorry, that's not a valid username or password</p>
+		{% endif %}
+		<form action="" method="post" class="group">{% csrf_token %}
+			<label for="username">User name:</label>
+			<input type="text" name="username" value="" id="username">
+			<label for="password">Password:</label>
+			<input type="password" name="password" value="" id="password">
+
+			<input type="submit" value="Login">
+ 		</form>
+		<div id="registerSection">
+			<div id="or">New User???</div>
+			<a href="/register"><img src="{% static "assets/images/register2.png" %}"  id="registerpage" onclick="/register"></a>
+		</div>
+		</div>
+	</div>
+{% endblock %}
